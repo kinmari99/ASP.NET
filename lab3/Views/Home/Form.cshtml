@@ -1,0 +1,58 @@
+﻿@model lab3.Models.Dane
+
+
+
+<form asp-action="Form" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Imie">Twoje Imię</label>
+        <input asp-for="Imie" />
+    </div>
+    <div>
+        <label asp-for="Nazwisko">Twoje Nazwisko</label>
+        <input asp-for="Nazwisko" />
+    </div>
+
+    <div>
+        <label asp-for="Email">Twój Email</label>
+        <input asp-for="Email" />
+    </div>
+
+    <div>
+        <label asp-for="Haslo">Haslo</label>
+        <input type="password" asp-for="Haslo"  />
+    </div>
+
+    <div>
+        <label asp-for="powtorzHaslo">Powtórz Haslo</label>
+        <input type="password" asp-for="powtorzHaslo" />
+    </div>
+
+    <div>
+        <label asp-for="numerTelefonu">Numer Telefonu</label>
+        <input asp-for="numerTelefonu"/>
+    </div>
+    <div>
+    <label asp-for="wiek">Wiek</label>
+    <input type="number" min="10" max="80" asp-for="wiek"/>
+    </div>
+
+    <div>
+        <select asp-for="Miasto"
+asp-items="Html.GetEnumSelectList<Dane.Miasta>()">
+</select>
+
+
+    </div>
+
+    <div>
+        <input type="submit" />
+    </div>
+
+    <div>
+        <input type="reset" value="Wyczysc"/>
+        
+
+    </div>
+
+</form>
